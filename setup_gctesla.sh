@@ -16,7 +16,7 @@ cd ~
 wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
 tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
 sudo cp -P cuda/include/cudnn.h $CUDA_HOME/include
-sudo cp -P cuda/lib64/libcudnn $CUDA_HOME/lib64
+sudo cp -P cuda/lib64/libcudnn* $CUDA_HOME/lib64
 sudo chmod u+w $CUDA_HOME/include/cudnn.h
 sudo chmod a+r $CUDA_HOME/lib64/libcudnn
 export LC_ALL=C

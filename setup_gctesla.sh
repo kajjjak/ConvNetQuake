@@ -13,5 +13,5 @@ sudo cp cuda/lib64/* /usr/local/cuda/lib64/
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
 rm -rf ~/cuda
 rm cudnn-8.0-linux-x64-v7.tgz
-sudo apt-get install python-dev python-pip libcupti-dev
+sudo apt-get -y install python-dev python-pip libcupti-dev
 sudo pip install tensorflow-gpu

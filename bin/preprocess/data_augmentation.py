@@ -9,7 +9,8 @@
 """Read some tfrecords (1 epoch),
     proceed to data augmentation and save new tfrecords"""
 
-
+import matplotlib
+matplotlib.use('Agg')
 import os
 import numpy as np
 from quakenet.data_pipeline import DataPipeline,DataWriter

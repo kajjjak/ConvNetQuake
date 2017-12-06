@@ -14,7 +14,8 @@ e.g.,
 --catalog data/50_clusters/catalog_with_cluster_ids.csv\
 --output_dir data/50_clusters/tfrecords
 """
-
+import matplotlib
+matplotlib.use('Agg')
 import os
 import numpy as np
 from quakenet.data_pipeline import DataWriter

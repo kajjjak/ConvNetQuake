@@ -8,11 +8,11 @@ export LD_LIBRARY_PATH=\${CUDA_HOME}/lib64
 export PATH=\${CUDA_HOME}/bin:\${PATH}
 EOF
 source ~/.bashrc
-cuda-install-samples-8.0.sh ~
-cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
-make
-./deviceQuery
-cd ~
+#cuda-install-samples-8.0.sh ~
+#cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
+#make
+#./deviceQuery
+#cd ~
 wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
 tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
 sudo cp -P cuda/include/cudnn.h $CUDA_HOME/include

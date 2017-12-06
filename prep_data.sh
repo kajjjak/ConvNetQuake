@@ -1,3 +1,7 @@
+gcloud compute scp --recurse /media/kjartan/DATADRIVE11/ConNetQuake/data/*  instance-convnetquake:/home/kjartan/ConvNetQuake/data --zone us-east1-c
+
+OR
+
 mkdir data
 mkdir data/catalogs
 cd data/catalogs

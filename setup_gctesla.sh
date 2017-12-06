@@ -7,11 +7,12 @@ echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
 echo 'export PATH=$PATH:$CUDA_HOME/bin' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=$CUDA_HOME/lib64' >> ~/.bashrc
 source ~/.bashrc
-wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v7.tgz
-tar xzvf cudnn-8.0-linux-x64-v7.tgz
+wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
+tar xzvf cudnn-8.0-linux-x64-v6.0.tgz
 sudo cp cuda/lib64/* /usr/local/cuda/lib64/
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
 rm -rf ~/cuda
-rm cudnn-8.0-linux-x64-v7.tgz
-sudo apt-get -y install python-dev python-pip libcupti-dev
+rm cudnn-8.0-linux-x64-v6.0.tgz
+export LC_ALL=C
+sudo apt-get install python-dev python-pip libcupti-dev
 sudo pip install tensorflow-gpu

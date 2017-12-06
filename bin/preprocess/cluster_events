@@ -17,7 +17,8 @@ e.g.,
 ./bin/preprocess/cluster_events --src data/catalogs/OK_2014-2015-2016.csv\
 --dst data/6_clusters --n_components 6 --model KMeans
 """
-
+import matplotlib
+matplotlib.use('Agg')
 from os import path
 from quakenet import data_pipeline as dpp
 from quakenet import data_io

@@ -52,5 +52,8 @@ cp GSOK029_5-2014.tfrecords ../train/positive
 cp GSOK027_12-2014.tfrecords ../train/positive
 cp GSOK029_1-2015.tfrecords ../train/positive
 cp GSOK029_5-2016.tfrecords ../train/positive
+cd ..
+cd ..
+mkdir output
 ./bin/train --dataset data/6_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6
 

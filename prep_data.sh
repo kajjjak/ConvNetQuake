@@ -55,5 +55,6 @@ cp GSOK029_5-2016.tfrecords ../train/positive
 cd ..
 cd ..
 mkdir output
+output/convnetquake
 ./bin/train --dataset data/6_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6
 

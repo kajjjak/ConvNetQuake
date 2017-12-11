@@ -7,4 +7,4 @@ sudo apt-get update
 mkdir ~/ConvNetQuake/data
 #gcsfuse convnetquake ConvNetQuake/data -- https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/mounting.md
 # -- https://cloud.google.com/storage/docs/quickstart-gsutil
-gsutil cp -r gs://convnetquake ConvNetQuake/data 
+gsutil cp -r gs://convnetquake ~/ConvNetQuake/data 

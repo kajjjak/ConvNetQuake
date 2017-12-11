@@ -58,6 +58,7 @@ cp GSOK029_5-2016.tfrecords ../train/positive
 cd ~/ConvNetQuake
 mkdir ~/ConvNetQuake/output
 mkdir ~/ConvNetQuake/convnetquake
+export LC_ALL=C
 sudo tensorboard --port 80  --logdir ~/ConvNetQuake/output/convnetquake/ConvNetQuake &
 ./bin/train --dataset data/6_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6
 

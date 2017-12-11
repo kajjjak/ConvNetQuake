@@ -2,7 +2,7 @@ curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_
 sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 sudo apt-get -y update
 sudo apt-get -y install cuda-8-0
-./setup_gcteslapaths.sh
+sudo ./setup_gcteslapaths.sh
 wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
 tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
 cuda-install-samples-8.0.sh ~

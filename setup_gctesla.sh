@@ -13,10 +13,10 @@ LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64
 #make
 #./deviceQuery
 #cd ~
-sudo cp -Pv cuda/include/cudnn.h $CUDA_HOME/include
-sudo cp -Pv cuda/lib64/libcudnn* $CUDA_HOME/lib64
-sudo chmod u+w $CUDA_HOME/include/cudnn.h
-sudo chmod a+r $CUDA_HOME/lib64/libcudnn*
+sudo cp -Pv cuda/include/cudnn.h /usr/local/cuda-8.0/include
+sudo cp -Pv cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
+sudo chmod u+w /usr/local/cuda-8.0/include/cudnn.h
+sudo chmod a+r /usr/local/cuda-8.0/lib64/libcudnn*
 LC_ALL=C
 export LC_ALL
 sudo apt-get -y install python-dev python-pip libcupti-dev

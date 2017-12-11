@@ -4,6 +4,8 @@ sudo apt-get -y update
 sudo apt-get -y install cuda-8-0
 CUDA_HOME=/usr/local/cuda-8.0
 LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64
+export CUDA_HOME
+export LD_LIBRARY_PATH
 #PATH=\${CUDA_HOME}/bin:\${PATH}
 #sudo ./setup_gcteslapaths.sh
 wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz

@@ -4,6 +4,11 @@ sudo apt-get -y update
 sudo apt-get -y install cuda-8-0
 ./setup_gcteslapaths.sh
 wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
+cuda-install-samples-8.0.sh ~
+cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
+make
+./deviceQuery
+cd ~
 tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
 sudo cp -P cuda/include/cudnn.h $CUDA_HOME/include
 sudo cp -P cuda/lib64/libcudnn* $CUDA_HOME/lib64
@@ -12,8 +17,3 @@ sudo chmod a+r $CUDA_HOME/lib64/libcudnn*
 export LC_ALL=C
 sudo apt-get -y install python-dev python-pip libcupti-dev
 sudo pip install tensorflow-gpu
-cuda-install-samples-8.0.sh ~
-cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
-make
-./deviceQuery
-cd ~

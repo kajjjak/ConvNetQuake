@@ -6,8 +6,8 @@ CUDA_HOME=/usr/local/cuda-8.0
 LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64
 #PATH=\${CUDA_HOME}/bin:\${PATH}
 #sudo ./setup_gcteslapaths.sh
-#wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
-#tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
+wget https://storage.googleapis.com/convnetquake/cudnn-8.0-linux-x64-v6.0.tgz
+tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
 #cuda-install-samples-8.0.sh ~
 #cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
 #make

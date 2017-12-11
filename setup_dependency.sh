@@ -20,6 +20,6 @@ pip install scikit-learn==0.18
 pip install scipy==0.18.1
 pip install seaborn==0.7.1
 pip install setproctitle==1.1.10
-pip install tensorflow==0.12.1
+#pip install tensorflow==0.12.1
 pip install terminado==0.6
 pip install tqdm==4.9.0

@@ -8,6 +8,8 @@ export PYTHONPATH=$PWD
 mkdir ~/ConvNetQuake/data/6_clusters/train/
 mkdir ~/ConvNetQuake/data/6_clusters/train/negative
 mkdir ~/ConvNetQuake/data/6_clusters/train/positive
+mkdir ~/ConvNetQuake/data/6_clusters/test_events
+mkdir ~/ConvNetQuake/data/6_clusters/test_noise
 cp -r data/noise_OK029/noise_august/* ../train/negative
 cd ~/ConvNetQuake/data/6_clusters/events
 cp GS0K029_10-2015.tfrecords  ../train/positive
@@ -56,9 +58,19 @@ cp GSOK029_5-2014.tfrecords ../train/positive
 cp GSOK027_12-2014.tfrecords ../train/positive
 cp GSOK029_1-2015.tfrecords ../train/positive
 cp GSOK029_5-2016.tfrecords ../train/positive
+cp GSOK027_11-2014.tfrecords ../train/test_events
+cp GSOK029_10-2016.tfrecords ../train/test_events
+cp GSOK029_4-2016.tfrecords ../train/test_events
+cp GSOK027_1-2015.tfrecords ../train/test_events
+cp GSOK029_11-2016.tfrecords ../train/test_events
+cp GSOK029_5-2014.tfrecords ../train/test_events
+cp GSOK027_12-2014.tfrecords ../train/test_events
+cp GSOK029_1-2015.tfrecords ../train/test_events
+cp GSOK029_5-2016.tfrecords ../train/test_events
 cd ~/ConvNetQuake
 mkdir ~/ConvNetQuake/output
 mkdir ~/ConvNetQuake/convnetquake
+cp -r data/noise_OK029/noise_august/* ~/ConvNetQuake/data/6_clusters/test_noise
 export LC_ALL=C
 sudo tensorboard --port 80  --logdir ~/ConvNetQuake/output/convnetquake/ConvNetQuake &
 ./bin/train --dataset data/6_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6

@@ -8,6 +8,7 @@ export PYTHONPATH=$PWD
 mkdir ~/ConvNetQuake/data/6_clusters/train/
 mkdir ~/ConvNetQuake/data/6_clusters/train/negative
 mkdir ~/ConvNetQuake/data/6_clusters/train/positive
+cp -r data/noise_OK029/noise_august/* ../train/negative
 cd ~/ConvNetQuake/data/6_clusters/events
 cp GS0K029_10-2015.tfrecords  ../train/positive
 cp GSOK027_2-2014.tfrecords ../train/positive

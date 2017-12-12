@@ -11,54 +11,9 @@ mkdir ~/ConvNetQuake/data/6_clusters/train/negative
 mkdir ~/ConvNetQuake/data/6_clusters/train/positive
 mkdir ~/ConvNetQuake/data/6_clusters/test_events
 mkdir ~/ConvNetQuake/data/6_clusters/test_noise
-cp -r data/noise_OK029/noise_august/* ../train/negative
+cp -r data/noise_OK029/noise_august/* ~/ConvNetQuake/data/6_clusters/train/negative
+cp -r ~/ConvNetQuake/data/6_clusters/events ~/ConvNetQuake/data/6_clusters/train/positive
 cd ~/ConvNetQuake/data/6_clusters/events
-cp GS0K029_10-2015.tfrecords  ../train/positive
-cp GSOK027_2-2014.tfrecords ../train/positive
-cp GSOK029_1-2016.tfrecords ../train/positive
-cp GSOK029_6-2014.tfrecords ../train/positive
-cp GS0K029_11-2015.tfrecords ../train/positive
-cp GSOK027_2-2015.tfrecords ../train/positive
-cp GSOK029_12-2014.tfrecords ../train/positive
-cp GSOK029_6-2016.tfrecords ../train/positive
-cp GS0K029_12-2015.tfrecords ../train/positive
-cp GSOK027_3-2014.tfrecords ../train/positive
-cp GSOK029_12-2016.tfrecords ../train/positive
-cp GSOK029_7-2016.tfrecords ../train/positive
-cp GS0K029_4-2015.tfrecords ../train/positive
-cp GSOK027_3-2015.tfrecords ../train/positive
-cp GSOK029_2-2014.tfrecords ../train/positive
-cp GSOK029_8-2014.tfrecords ../train/positive
-cp GS0K029_5-2015.tfrecords ../train/positive
-cp GSOK027_4-2014.tfrecords ../train/positive
-cp GSOK029_2-2015.tfrecords ../train/positive
-cp GSOK029_8-2016.tfrecords ../train/positive
-cp GS0K029_6-2015.tfrecords ../train/positive
-cp GSOK027_5-2014.tfrecords ../train/positive
-cp GSOK029_2-2016.tfrecords ../train/positive
-cp GSOK029_9-2014.tfrecords ../train/positive
-cp GS0K029_7-2015.tfrecords ../train/positive
-cp GSOK027_6-2014.tfrecords ../train/positive
-cp GSOK029_3-2014.tfrecords ../train/positive
-cp GSOK029_9-2016.tfrecords ../train/positive
-cp GS0K029_8-2015.tfrecords ../train/positive
-cp GSOK027_8-2014.tfrecords ../train/positive
-cp GSOK029_3-2015.tfrecords ../train/positive
-cp GS0K029_9-2015.tfrecords ../train/positive
-cp GSOK027_9-2014.tfrecords ../train/positive
-cp GSOK029_3-2016.tfrecords ../train/positive
-cp GSOK027_10-2014.tfrecords ../train/positive
-cp GSOK029_10-2014.tfrecords ../train/positive
-cp GSOK029_4-2014.tfrecords ../train/positive
-cp GSOK027_11-2014.tfrecords ../train/positive
-cp GSOK029_10-2016.tfrecords ../train/positive
-cp GSOK029_4-2016.tfrecords ../train/positive
-cp GSOK027_1-2015.tfrecords ../train/positive
-cp GSOK029_11-2016.tfrecords ../train/positive
-cp GSOK029_5-2014.tfrecords ../train/positive
-cp GSOK027_12-2014.tfrecords ../train/positive
-cp GSOK029_1-2015.tfrecords ../train/positive
-cp GSOK029_5-2016.tfrecords ../train/positive
 cp GSOK027_11-2014.tfrecords ../train/test_events
 cp GSOK029_10-2016.tfrecords ../train/test_events
 cp GSOK029_4-2016.tfrecords ../train/test_events

@@ -1,4 +1,5 @@
 # gcloud compute scp --recurse /media/kjartan/DATADRIVE11/ConNetQuake/data/*  instance-convnetquake:/home/kjartan/ConvNetQuake/data --zone us-east1-c
+# we want HHZ files from find /mseed/mseed/2013/ | grep -e nyl -e vog -e haf -e san -e grv -e kri -e vos | grep HH | awk -F '.' ' $8 >= 000 && $8 <= 345  { print $0 }' > filelist2013.txt
 cd ~/ConvNetQuake
 export PYTHONPATH=$PWD
 ./bin/preprocess/cluster_events --src data/catalogs/OK_2014-2015-2016.csv --dst data/6_clusters --n_components 6 --model KMeans

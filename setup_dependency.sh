@@ -1,5 +1,5 @@
-apt-get -y install python-pip
-apt-get -y install python-tk
+sudo apt-get -y install python-pip
+sudo apt-get -y install python-tk
 pip install numpy
 pip install Cython
 pip install obspy

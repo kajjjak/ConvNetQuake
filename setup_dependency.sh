@@ -2,7 +2,6 @@ sudo apt-get -y install python-pip
 sudo apt-get -y install python-tk
 pip install numpy
 pip install Cython
-pip install obspy
 pip install pandas
 pip install python-gflags
 pip install -U scikit-learn
@@ -23,3 +22,4 @@ pip install setproctitle==1.1.10
 pip install tensorflow==0.12.1
 pip install terminado==0.6
 pip install tqdm==4.9.0
+pip install obspy

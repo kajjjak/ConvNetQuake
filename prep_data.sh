@@ -9,15 +9,15 @@ mkdir ~/ConvNetQuake/data/6_clusters/train/
 mkdir ~/ConvNetQuake/data/6_clusters/train/negative
 mkdir ~/ConvNetQuake/data/6_clusters/train/positive
 cd ~/ConvNetQuake/data/6_clusters/events
-cp GS0K029_10-2015.tfrecords  ../train/negative
-cp GSOK027_2-2014.tfrecords ../train/negative
-cp GSOK029_1-2016.tfrecords ../train/negative
-cp GSOK029_6-2014.tfrecords ../train/negative
-cp GS0K029_11-2015.tfrecords ../train/negative
-cp GSOK027_2-2015.tfrecords ../train/negative
-cp GSOK029_12-2014.tfrecords ../train/negative
-cp GSOK029_6-2016.tfrecords ../train/negative
-cp GS0K029_12-2015.tfrecords ../train/negative
+cp GS0K029_10-2015.tfrecords  ../train/positive
+cp GSOK027_2-2014.tfrecords ../train/positive
+cp GSOK029_1-2016.tfrecords ../train/positive
+cp GSOK029_6-2014.tfrecords ../train/positive
+cp GS0K029_11-2015.tfrecords ../train/positive
+cp GSOK027_2-2015.tfrecords ../train/positive
+cp GSOK029_12-2014.tfrecords ../train/positive
+cp GSOK029_6-2016.tfrecords ../train/positive
+cp GS0K029_12-2015.tfrecords ../train/positive
 cp GSOK027_3-2014.tfrecords ../train/positive
 cp GSOK029_12-2016.tfrecords ../train/positive
 cp GSOK029_7-2016.tfrecords ../train/positive

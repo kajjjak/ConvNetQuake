@@ -1,3 +1,4 @@
+export LC_ALL=C
 sudo apt-get -y install python-pip
 sudo apt-get -y install python-tk
 pip install numpy

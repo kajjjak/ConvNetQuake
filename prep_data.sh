@@ -28,6 +28,5 @@ mkdir ~/ConvNetQuake/output
 mkdir ~/ConvNetQuake/convnetquake
 cp -r data/noise_OK029/noise_august/* ~/ConvNetQuake/data/6_clusters/test_noise
 export LC_ALL=C
-sudo tensorboard --port 80  --logdir output/convnetquake/ConvNetQuake &
 ./bin/train --dataset data/6_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6
 

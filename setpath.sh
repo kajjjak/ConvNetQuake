@@ -1,3 +1,1 @@
-#!/bin/sh
-
-export PYTHONPATH=`pwd`:$PYTHONPATH
+export PYTHONPATH=${PWD}:$PYTHONPATH

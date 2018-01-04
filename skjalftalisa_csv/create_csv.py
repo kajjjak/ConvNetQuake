@@ -9,8 +9,8 @@ payload = {
     "depth_max":30,
     "size_min":-2,
     "size_max":7,
-    "start_time":"2017-12-27 10:20:34",
-    "end_time":"2018-01-03 10:20:34",
+    "start_time":"2015-01-01 00:00:00",
+    "end_time":"2018-01-01 00:00:00",
     "area":[[67.15324797927008,-27.671337938467392],[66.96387680100747,-8.300915807715795],[62.46737507795685,-9.459340234265575],[62.64981735887721,-26.01107838590873]],
     "event_type":["qu"],
     "originating_system":["SIL picks"],
@@ -22,11 +22,12 @@ data = json.loads(resp.text)
 
 # enumerate through geometries
 print ",id,origintime,latitude,longitude,depth,err_lon,err_lat,err_depth,err_origintime,county,origin_src,prefmag,pmag_type,pmag_src,mw,mw_src,mblg_ogs,mblg_usgs,ml_ogs,m3hz_ogs,md_ogs,mb,ms,mfa,max_mmi,reafile,reamtime,geom,pdlid,mw_ogs,utc_timestamp"
+row_counter = 0
 for geom in data:
     prop = geom["properties"]
     utf_time = datetime.datetime.fromtimestamp(prop["time"])
     stmp_time = prop["time"]
-    print ","+ \
+    print str(row_counter) + ","+ \
         str(prop["event_id"])+",", \
         utf_time.isoformat()+",",\
         str(geom["geometry"]["coordinates"][0])+",", \
@@ -34,10 +35,11 @@ for geom in data:
         str(prop["depth"])+",",\
         "0,",\
         "0,",\
-        "0,", \
+        "0,",\
         "0,",\
         "IS,",\
         "SIL,",\
+        str(prop["magnitude"])+",",\
         str(prop["magnitude_type"]).upper()+",",\
         "OGS,",\
         ",",\
@@ -51,8 +53,14 @@ for geom in data:
         ",",\
         ",",\
         "0,",\
-        "/home/analyst/REA/OGS__/2014/01/...,",\
-        utf_time
+        "/home/analyst/REA/OGS__/2014/01/...,", \
+        datetime.datetime.now().isoformat()+",",\
+        "0101000020E6100000541D7233DC3A58C0053411363C154240,",\
+        "3982.0",\
+        ",", \
+        ",", \
+        stmp_time
+    row_counter = row_counter + 1
 
 
 """
@@ -94,4 +102,4 @@ utc_timestamp=1388536368.28
 
 """
 
-print data
+#print data

@@ -14,20 +14,19 @@ mkdir ~/ConvNetQuake/data/6_clusters/test_noise
 cp -r data/noise_OK029/noise_august/* ~/ConvNetQuake/data/6_clusters/train/negative
 cp -r ~/ConvNetQuake/data/6_clusters/events ~/ConvNetQuake/data/6_clusters/train/positive
 cd ~/ConvNetQuake/data/6_clusters/events
-mv GSOK027_11-2014.tfrecords ../train/test_events
-mv GSOK029_10-2016.tfrecords ../train/test_events
-mv GSOK029_4-2016.tfrecords ../train/test_events
-mv GSOK027_1-2015.tfrecords ../train/test_events
-mv GSOK029_11-2016.tfrecords ../train/test_events
-mv GSOK029_5-2014.tfrecords ../train/test_events
-mv GSOK027_12-2014.tfrecords ../train/test_events
-mv GSOK029_1-2015.tfrecords ../train/test_events
-mv GSOK029_5-2016.tfrecords ../train/test_events
+mv GSOK027_11-2014.tfrecords ../test_events
+mv GSOK029_10-2016.tfrecords ../test_events
+mv GSOK029_4-2016.tfrecords ../test_events
+mv GSOK027_1-2015.tfrecords ../test_events
+mv GSOK029_11-2016.tfrecords ../test_events
+mv GSOK029_5-2014.tfrecords ../test_events
+mv GSOK027_12-2014.tfrecords ../test_events
+mv GSOK029_1-2015.tfrecords ../test_events
+mv GSOK029_5-2016.tfrecords ../test_events
 cd ~/ConvNetQuake
 mkdir ~/ConvNetQuake/output
 mkdir ~/ConvNetQuake/convnetquake
 cp -r data/noise_OK029/noise_august/* ~/ConvNetQuake/data/6_clusters/test_noise
 export LC_ALL=C
-sudo tensorboard --port 80  --logdir output/convnetquake/ConvNetQuake &
 ./bin/train --dataset data/6_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6
-
+# ./bin/evaluate --checkpoint_dir output/convnetquake/ConvNetQuake --dataset data/6_clusters/test_events --eval_interval 10 --n_clusters 6 --events & ./bin/evaluate --checkpoint_dir output/convnetquake/ConvNetQuake --dataset data/6_clusters/test_noise --eval_interval 10 --n_clusters 6 --noise

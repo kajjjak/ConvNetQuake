@@ -14,7 +14,8 @@ e.g.,
 --catalog data/catalog/Benz_catalog.csv\
 --output data/tfrecords/GSOK029_2-2014.tfrecords
 """
-
+import matplotlib
+matplotlib.use('Agg')
 import os
 import numpy as np
 from quakenet.data_pipeline import DataWriter

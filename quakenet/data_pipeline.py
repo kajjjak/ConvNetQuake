@@ -133,6 +133,7 @@ class DataPipeline(object):
         if is_training:
 
             with tf.name_scope('inputs'):
+                print dataset_path 
                 self._reader = DataReader(dataset_path, config=config)
                 samples = self._reader.read()
                 sample_input = samples['data']

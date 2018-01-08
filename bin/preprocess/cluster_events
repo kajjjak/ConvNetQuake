@@ -17,6 +17,13 @@ e.g.,
 ./bin/preprocess/cluster_events --src data/catalogs/OK_2014-2015-2016.csv\
 --dst data/6_clusters --n_components 6 --model KMeans
 """
+
+"""
+Penensula: [[63.41119772365924,-21.184043884277344],[64.24698161075293,-21.002769470214847],[64.2374330029458,-23.980064392089844],[63.389061297647125,-24.051475524902347]]
+Period: 01-01-2015 -- 01-01-2018
+"""
+
+
 import matplotlib
 matplotlib.use('Agg')
 from os import path
@@ -37,7 +44,7 @@ from sklearn.cluster import KMeans, DBSCAN
 from sklearn.mixture import GaussianMixture
 import seaborn as sns
 from openquake.hazardlib.geo.geodetic import distance
-
+import random
 
 gflags.DEFINE_string(
     'src', None, 'path to the events catalog to use as labels.')
@@ -52,28 +59,34 @@ OK029_LONG = -97.454860
 OK027_LAT = 35.72
 OK027_LONG = -97.29
 
+FILTER_AREA_BOUNDS_LON1 = 35.7
+FILTER_AREA_BOUNDS_LAT1 = -97.6
+FILTER_AREA_BOUNDS_LON2 = 36
+FILTER_AREA_BOUNDS_LAT2 = -97.2
 
 def filter_catalog(cat):
     """ Filter the events in cat
     to keep the events near Guthrie 
     """
-    cat = cat[(cat.latitude > 35.7) & (cat.latitude < 36)
-              & (cat.longitude > -97.6) & (cat.longitude < -97.2)]
+    #cat = cat[(cat.latitude > FILTER_AREA_BOUNDS_LON1) & (cat.latitude < FILTER_AREA_BOUNDS_LON2)
+    #          & (cat.longitude > FILTER_AREA_BOUNDS_LAT1) & (cat.longitude < FILTER_AREA_BOUNDS_LAT2)]
     # Filter event after 15th February 2014
-    begin_february = UTCDateTime(2014, 02, 15, 00, 00, 00, 500000)
-    cat = cat[cat.utc_timestamp > begin_february]
-    return cat
+    # org kaj - begin_february = UTCDateTime(2014, 02, 15, 00, 00, 00, 500000)
+    # org kaj - cat = cat[cat.utc_timestamp > begin_february]
+    #begin_filterdate = UTCDateTime(2018, 01, 01, 00, 00, 00, 500000)
+    #cat = cat[cat.utc_timestamp > begin_filterdate]
+    return cat  # dont filter anything since we did that through skjalftalisa
 
 def get_test_coordinates(cat):
     """ 
     Return coordinates of the test set
     (July 2014)
     """
-    cat = cat[(cat.latitude > 35.7) & (cat.latitude < 36)
-              & (cat.longitude > -97.6) & (cat.longitude < -97.2)]
+    cat = cat[(cat.latitude > FILTER_AREA_BOUNDS_LON1) & (cat.latitude < FILTER_AREA_BOUNDS_LON2)
+              & (cat.longitude > FILTER_AREA_BOUNDS_LAT1) & (cat.longitude < FILTER_AREA_BOUNDS_LAT2)]
     # Filter events during July 2014
-    begin_aug = UTCDateTime(2014, 7, 1, 00, 00, 00, 500000)
-    end_december = UTCDateTime(2014, 7, 31, 23, 59, 59, 500000)
+    begin_aug = UTCDateTime(2017, 7, 1, 00, 00, 00, 500000)
+    end_december = UTCDateTime(2017, 7, 31, 23, 59, 59, 500000)
     cat = cat[(cat.utc_timestamp > begin_aug) & (cat.utc_timestamp < end_december)]
     lat = cat['latitude'].as_matrix()
     lon = cat['longitude'].as_matrix()
@@ -111,6 +124,8 @@ def distance_to_station(lat, long, depth):
     # return distance of the event to the station
     return distance(long, lat, depth, long0, lat0, depth0)
 
+def random_nr(x):
+    return random.random(x)-0.5;
 
 def main(argv):
     try:
@@ -146,12 +161,12 @@ def main(argv):
     elif FLAGS.model == 'KMeans':
 
         if FLAGS.n_components ==6:
-            initialization = np.array([ [-97.6, 36],
-                                        [-97.4,35.85],
-                                        [-97.2, 35.85],
-                                        [-97.3,35.75],
-                                        [-97.4,35.95],
-                                        [-97.6,35.75]])
+            initialization = np.array([ [63.7552,  -22.94477],
+                                        [64.05991, -21.3828],
+                                        [63.75915, -23.11457],
+                                        [64.01964, -21.4166],
+                                        [64.00633, -21.50222],
+                                        [63.82853, -22.70157]])
         elif FLAGS.n_components == 50:
             init_50 = os.path.join(FLAGS.dst,'centroids_50.npy')
             initialization = np.load(init_50)
@@ -195,8 +210,8 @@ def main(argv):
         raise ValueError("set clustering model to DBSCAN or KMeans")
 
     # Add station on plot
-    plt.plot(OK029_LONG, OK029_LAT, '*', linewidth=10)
-    plt.plot(OK027_LONG, OK027_LAT, '*', linewidth=10)
+    #plt.plot(OK029_LONG, OK029_LAT, '*', linewidth=10)
+    #plt.plot(OK027_LONG, OK027_LAT, '*', linewidth=10)
 
     # Save labels metadata
     metadata_path = os.path.join(FLAGS.dst,"clusters_metadata.json")
@@ -238,4 +253,7 @@ def main(argv):
     np.save(np_name,y)
 
 if __name__ == "__main__":
+    #main(["./bin/preprocess/cluster_events", "--src", "OK_2014-2015-2016.csv", "--dst", "6_clusters", "--n_components", "6", "--model", "KMeans"])
     main(sys.argv)
+
+

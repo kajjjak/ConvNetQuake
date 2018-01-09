@@ -84,7 +84,7 @@ def write_json(metadata,output_metadata):
 def main(_):
 
     stream_files = [file for file in os.listdir(FLAGS.stream_dir) if
-                    fnmatch.fnmatch(file, '*.mseed')]
+                    fnmatch.fnmatch(file, '*')]
     print "List of streams to anlayze", stream_files
 
     # Create dir to store tfrecords

@@ -253,7 +253,9 @@ def main(argv):
     np.save(np_name,y)
 
 if __name__ == "__main__":
-    #main(["./bin/preprocess/cluster_events", "--src", "OK_2014-2015-2016.csv", "--dst", "6_clusters", "--n_components", "6", "--model", "KMeans"])
-    main(sys.argv)
+    if len(sys.argv) == 0:
+        main(["./bin/preprocess/cluster_events", "--src", "OK_2014-2015-2016.csv", "--dst", "6_clusters", "--n_components", "6", "--model", "KMeans"])
+    else:
+        main(sys.argv)
 
 

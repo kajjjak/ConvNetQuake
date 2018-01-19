@@ -60,8 +60,7 @@ def preprocess_stream(stream):
 
 def filter_catalog(cat):
     # Filter around Guthrie sequence
-    cat = cat[(cat.latitude > 35.7) & (cat.latitude < 36)
-              & (cat.longitude > -97.6) & (cat.longitude < -97.2)]
+    #cat = cat[(cat.latitude > 35.7) & (cat.latitude < 36) & (cat.longitude > -97.6) & (cat.longitude < -97.2)]
     return cat
 
 

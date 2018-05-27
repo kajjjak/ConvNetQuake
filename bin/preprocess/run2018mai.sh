@@ -32,5 +32,5 @@ mv data/noise_OK029/noise_august/noise_GSOK029_8-2014_102.tfrecords data/100_clu
 mv data/noise_OK029/noise_august/noise_GSOK029_8-2014_115.tfrecords data/100_clusters/test_noise
 mv data/noise_OK029/noise_august/noise_GSOK029_8-2014_39.tfrecords data/100_clusters/test_noise
 export LC_ALL=C
-./bin/train --dataset data/100_clusters/train --checkpoint_dir output/convnetquake --n_clusters 6
-# ./bin/evaluate --checkpoint_dir output/convnetquake/ConvNetQuake --dataset data/100_clusters/test_events --eval_interval 10 --n_clusters 6 --events & ./bin/evaluate --checkpoint_dir output/convnetquake/ConvNetQuake --dataset data/100_clusters/test_noise --eval_interval 10 --n_clusters 6 --noise
+./bin/train --dataset data/100_clusters/train --checkpoint_dir output/convnetquake --n_clusters 100
+# ./bin/evaluate --checkpoint_dir output/convnetquake/ConvNetQuake --dataset data/100_clusters/test_events --eval_interval 10 --n_clusters 100 --events & ./bin/evaluate --checkpoint_dir output/convnetquake/ConvNetQuake --dataset data/100_clusters/test_noise --eval_interval 10 --n_clusters 100 --noise

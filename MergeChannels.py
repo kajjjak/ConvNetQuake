@@ -1,6 +1,12 @@
 import obspy
 import glob
 
+
+#import obspy
+#mseed = obspy.read("data/streams/data/VI.san..HH.D.2015.261.mseed")
+#mseed.plot()
+
+
 # /net/frumgogn04/data/mseed/2017/VI
 
 #mseeds = glob.glob("./2015/VI.???..HHZ*", recursive=True)
